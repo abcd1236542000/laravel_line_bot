@@ -43,7 +43,7 @@ class TextMessageService extends AbstractExecuteService implements IExecuteServi
                 $d_data_str = data_get($order_detail_info, 'd');
                 $d_data = json_decode($d_data_str, true);
                 $list = data_get($d_data, 'List');
-                $message = "ORDER_NO(".$exp_data[0].")".PHP_EOL."EC_ORDER_NO(".$exp_data[1].")".PHP_EOL;
+                $message = "ORDER_NO(".$exp_data[1].")".PHP_EOL."EC_ORDER_NO(".$exp_data[0].")".PHP_EOL;
                 foreach ($list as $data) {
                     $message .= $data['SEND_STORE_NAME'].'-'.$data['RCV_STORE_NAME'].'-'.$data['RCV_STORE_ADDRESS'].' => '.$data['STATUS_D'].'('.$data['ORDER_DATE_R'] .')'. PHP_EOL;
                 }

@@ -51,7 +51,7 @@ class FamiportService
         $d_data_str = data_get($order_detail_info, 'd');
         $d_data = json_decode($d_data_str, true);
         $list = data_get($d_data, 'List');
-        $message = '';
+        $message = "ORDER_NO(".$order_no.")".PHP_EOL."EC_ORDER_NO(".$ec_order_no.")".PHP_EOL;
         foreach ($list as $data) {
             $message .= $data['SEND_STORE_NAME'].'-'.$data['RCV_STORE_NAME'].'-'.$data['RCV_STORE_ADDRESS'].' => '.$data['STATUS_D'].'('.$data['ORDER_DATE_R'] .')'. PHP_EOL;
         }
